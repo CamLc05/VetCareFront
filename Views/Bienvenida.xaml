@@ -10,7 +10,7 @@
                Aspect="AspectFit"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               Margin="0,100,0,0"
+               Margin="0,250,0,0"
                ZIndex="0" />
 
         <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
@@ -34,17 +34,19 @@
                HorizontalOptions="Center" 
                    Margin="0,10"/>
 
-            <Label Text="Tienes permiso de: Veterinario" 
-                   TextColor="#121113"
-                   FontAttributes="Bold"
-                   FontSize="17"
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,30"/>
+            <Label HorizontalOptions="Center" Margin="0,0,0,30">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Tienes permiso de: " FontSize="17"/>
+                        <Span Text="Veterinario" TextColor="#F17105" FontSize="17"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-            
+
+
 
         </StackLayout>
     </Grid>
 </ContentPage>
 
-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

@@ -11,7 +11,7 @@ public class Paciente
     public TipoSexo Sexo { get; set; }
     public Propietario Propietario { get; set; }
     public string Padecimiento { get; set; }
-    public List<Cita> Citas { get; set; } = new();
+    public List<Cita> Citas { get; set; }
     public string Intervenciones { get; set; }
     public List<string> Vacunas { get; set; }
 

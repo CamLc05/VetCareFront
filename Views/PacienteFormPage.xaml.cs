@@ -11,10 +11,8 @@ using Veterinaria.Views;
 namespace Veterinaria.Views;
 
 [QueryProperty(nameof(Paciente), "Paciente")]
-[QueryProperty(nameof(SoloLectura), "SoloLectura")]
 public partial class PacienteFormPage : ContentPage
 {
-    
     public PacienteFormPage()
     {
         InitializeComponent();
@@ -35,11 +33,4 @@ public partial class PacienteFormPage : ContentPage
             viewModel.Paciente = value;
         }
     }
-    
-    public bool SoloLectura
-    {
-        get => viewModel.SoloLectura;
-        set => viewModel.SoloLectura = value;
-    }
-    
 }

@@ -28,4 +28,45 @@ public partial class PacienteCardView : ContentView
         var control = (PacienteCardView)bindable;
         control.BindingContext = control;
     }
+    
+   
+    private async void OnEliminarSwipe(object sender, EventArgs e)
+    {
+        if (sender is SwipeItem item && item.CommandParameter is Paciente paciente)
+        {
+            bool confirmar = await Application.Current.MainPage.DisplayAlert(
+                "¿Estás segurx?",
+                $"¿Quieres eliminar a {paciente.Nombre}?",
+                "Sí", "Cancelar");
+
+            if (confirmar)
+            {
+                // Aquí va tu lógica para eliminar
+                Console.WriteLine("Eliminado: " + paciente.Nombre);
+            }
+        }
+    }
+
+    private async void OnEditarSwipe(object sender, EventArgs e)
+    {
+        if (sender is SwipeItem item && item.CommandParameter is Paciente paciente)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new PacienteDetalle(paciente));
+            Console.WriteLine("Editar: " + paciente.Nombre);
+        }
+    }
+
+    private async void OnVerPaciente(object sender, EventArgs e)
+    {
+        var recognizer = sender as TapGestureRecognizer;
+        var paciente = recognizer?.BindingContext as Paciente;
+
+        if (paciente != null)
+        {
+            // Navegar a la página detalle, pasando el paciente
+            await Application.Current.MainPage.Navigation.PushAsync(new PacienteDetalle(paciente));
+        }
+    }
 }
+
+

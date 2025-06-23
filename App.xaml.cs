@@ -5,12 +5,14 @@
         public App()
         {
             InitializeComponent();
+           
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var loginPage = new LoginPage();
-            return new Window(new NavigationPage(loginPage));
+            var loginPage = new LoginPage(); // o LoginPage, según tu flujo
+            var navPage = new NavigationPage(loginPage);
+            return new Window(navPage);
         }
     }
 }

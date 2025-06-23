@@ -14,8 +14,8 @@
     
     <TabBar>
         <ShellContent Title="Pacientes" ContentTemplate="{DataTemplate local:PacientesPages}"/>
-        <!-- <ShellContent Title="Citas" Icon="citas.png" ContentTemplate="{DataTemplate views:AppointmentsPage}" />
-        <ShellContent Title="Perfil" Icon="perfil.png" ContentTemplate="{DataTemplate views:ProfilePage}" />  -->
+      <!--  <ShellContent Title="Login" Icon="citas.png" ContentTemplate="{DataTemplate local:LoginPage}" />
+      <ShellContent Title="Perfil" Icon="perfil.png" ContentTemplate="{DataTemplate views:ProfilePage}" />  -->
     </TabBar>
    <!-- <ShellContent
         Title="Home"

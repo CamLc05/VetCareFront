@@ -1,6 +1,6 @@
 namespace Veterinaria.Models;
 
-public class Usario
+public class Usuario
 {
     public int Id { get; set; }
     public string Nombre_usuario { get; set; }

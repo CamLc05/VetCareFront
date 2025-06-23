@@ -18,17 +18,17 @@ namespace Veterinaria.Services
             new Paciente
             {
                 Nombre = "Chocolatito",
-                Especie = Especies.Perro,
+                Especie = TipoEspecie.Perro,
                 Raza = "Beagle",
                 FechaNacimiento = new DateTime(2019, 5, 20),
                 Sexo = "Macho",
                 Propietario = _propietarios[0],
                 Padecimientos = "Alergia alimentaria",
                 Imagen = "beagle.png",
-                Citas = new List<Citas>
+                Citas = new List<Cita>
                 {
-                    new Citas { Fecha = new DateTime(2023, 1, 15), Motivo = "Vacunación" },
-                    new Citas { Fecha = new DateTime(2023, 6, 10), Motivo = "Revisión general" }
+                    new Cita { Fecha = new DateTime(2023, 1, 15), Motivo = "Vacunación" },
+                    new Cita { Fecha = new DateTime(2023, 6, 10), Motivo = "Revisión general" }
                 },
                 Intervenciones = new List<Intervencion>
                 {
@@ -38,7 +38,7 @@ namespace Veterinaria.Services
             new Paciente
             {
                 Nombre = "Michi",
-                Especie = Especies.Gato,
+                Especie = TipoEspecie.Gato,
                 Raza = "Persa",
                 FechaNacimiento = new DateTime(2020, 8, 10),
                 Sexo = "Hembra",

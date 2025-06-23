@@ -1,6 +1,6 @@
 namespace Veterinaria.Models;
 
-public enum Especies
+public enum TipoEspecie
 {
     Perro,
     Gato,

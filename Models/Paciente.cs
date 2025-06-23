@@ -2,14 +2,17 @@ namespace Veterinaria.Models;
 
 public class Paciente
 {
+    public int Id { get; set; }
     public string Nombre { get; set; }
-    public Especies Especie { get; set; }
+    public TipoEspecie Especie { get; set; }
     public string Raza { get; set; }
-    public DateTime FechaNacimiento { get; set; }
-    public string Sexo { get; set; }
+    public Byte[] Foto_perfil { get; set; }
+    public DateTime Fecha_nacimiento { get; set; }
+    public TipoSexo Sexo { get; set; }
     public Propietario Propietario { get; set; }
-    public string Padecimientos { get; set; }
-    public List<Citas> Citas { get; set; } = new();
-    public List<Intervencion> Intervenciones { get; set; } = new();
-    public string Imagen { get; set; }
+    public string Padecimiento { get; set; }
+    public List<Cita> Citas { get; set; }
+    public string Intervenciones { get; set; }
+    public List<string> Vacunas { get; set; }
+
 }

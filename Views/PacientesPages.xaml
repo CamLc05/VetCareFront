@@ -9,6 +9,11 @@
              x:Name="PageRef">
     
 
+    <!--Margin="5,10,15,20"
+        Izquierda: 5
+        Arriba: 10
+        Derecha: 15
+        Abajo: 20-->
    <Grid>
             <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0" Margin="0">
                    

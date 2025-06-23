@@ -6,7 +6,17 @@ public class Paciente
     public string Nombre { get; set; }
     public TipoEspecie Especie { get; set; }
     public string Raza { get; set; }
-    public Byte[] Foto_perfil { get; set; }
+    public string Foto_perfil { get; set; }
+    public ImageSource FotoSource
+    {
+        get
+        {
+            return string.IsNullOrWhiteSpace(Foto_perfil)
+                ? "fondoinicio.png"
+                : ImageSource.FromFile(Foto_perfil);
+        }
+    }
+    
     public DateTime Fecha_nacimiento { get; set; }
     public TipoSexo Sexo { get; set; }
     public Propietario Propietario { get; set; }

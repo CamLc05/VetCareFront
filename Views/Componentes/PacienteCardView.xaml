@@ -4,13 +4,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Veterinaria.Views.Componentes.PacienteCardView">
     
-    <Frame Padding="10" BorderColor="Gray" CornerRadius="12" Margin="5">
-        <StackLayout>
-            <Label Text="{Binding Paciente.Nombre}" FontAttributes="Bold" FontSize="18"/>
-            <Label Text="{Binding Paciente.Especie}"/>
-            <Label Text="{Binding Paciente.Raza}"/>
-            <Label Text="{Binding Paciente.Propietario.Nombre}"/>
-        </StackLayout>
-    </Frame>
+    <!--Margin="5,10,15,20"
+        Izquierda: 5
+        Arriba: 10
+        Derecha: 15
+        Abajo: 20-->
     
+   <ScrollView>
+       <VerticalStackLayout Padding="10" Spacing="10">
+           <Frame 
+                  BackgroundColor="#E4DFDA"
+                  CornerRadius="20"
+                  Padding="5"
+                  Margin="5"
+                  HeightRequest="110">
+
+            <Grid ColumnDefinitions="Auto,*,Auto" 
+                  VerticalOptions="Center" 
+                  Padding="5" 
+                  RowSpacing="0">
+                
+                <!-- Imagen circular del paciente -->
+                <Image Source="{Binding Paciente.FotoSource}"
+                       WidthRequest="90"
+                       HeightRequest="90"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="45,45" RadiusX="45" RadiusY="45" />
+                    </Image.Clip>
+                </Image>
+               
+                <!-- Información del paciente -->
+                <StackLayout Grid.Column="1"
+                             Padding="10,0"
+                             Spacing="2"
+                             VerticalOptions="Center">
+                    <Label Text="{Binding Paciente.Nombre}"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label Text="{Binding Paciente.Especie, StringFormat='Especie: {0}' }" FontSize="14"/>
+                    <Label Text="{Binding Paciente.Raza, StringFormat='Raza: {0}' }" FontSize="14"/>
+                    <Label Text="{Binding Paciente.Propietario.Nombre , StringFormat='Propietario: {0}' }" FontSize="14"/>
+                </StackLayout>
+
+                <!-- Botones de acciones -->
+                <VerticalStackLayout Grid.Column="2"
+                                     Spacing="0"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End">
+                    <ImageButton Source="ver.png"
+                                 HeightRequest="5"
+                                 WidthRequest="5"
+                             
+                                 BackgroundColor="Transparent" />
+                    <ImageButton Source="editar.png"
+                                 HeightRequest="5"
+                                 WidthRequest="5"
+                               
+                                 BackgroundColor="Transparent" />
+                    <ImageButton Source="eliminar.png"
+                                 HeightRequest="5"
+                                 WidthRequest="5"
+                             
+                                 BackgroundColor="Transparent" />
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+       </VerticalStackLayout>
+    </ScrollView>
 </ContentView>

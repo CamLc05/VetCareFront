@@ -20,7 +20,7 @@ namespace Veterinaria.Services
                 Nombre = "Chocolatito",
                 Especie = TipoEspecie.Perro,
                 Raza = "Beagle",
-                Foto_perfil = [1],
+                Foto_perfil = "fondoinicio.png",
                 Fecha_nacimiento = new DateTime(2019, 5, 20),
                 Sexo = TipoSexo.Hembra,
                 Propietario = _propietarios[0],
@@ -43,7 +43,7 @@ namespace Veterinaria.Services
                 Nombre = "Michi",
                 Especie = TipoEspecie.Gato,
                 Raza = "Persa",
-                Foto_perfil = [1],
+                Foto_perfil = "perrito1.png",
                 Fecha_nacimiento = new DateTime(2019, 5, 20),
                 Sexo = TipoSexo.Hembra,
                 Propietario = _propietarios[0],
@@ -60,7 +60,31 @@ namespace Veterinaria.Services
                     "Vacuna antirrábica",
                     "Vacuna triple"
                 }
-                }
+                },
+            
+            new Paciente
+            {
+            Nombre = "Michi",
+            Especie = TipoEspecie.Gato,
+            Raza = "Persa",
+            Foto_perfil = "perrito1.png",
+            Fecha_nacimiento = new DateTime(2019, 5, 20),
+            Sexo = TipoSexo.Hembra,
+            Propietario = _propietarios[0],
+            Padecimiento = "Alergia alimentaria",
+            Citas = new List<Cita>
+            {
+                { 
+                    new Cita {Id = 2, Fecha_cita = new DateTime(2023, 1, 15), Motivo = "Vacunación"}
+                },
+            },
+            Intervenciones = "cirugia de corazón",
+            Vacunas = new List<string>
+            {
+                "Vacuna antirrábica",
+                "Vacuna triple"
+            }
+        }
             };
 
         public static List<Propietario> ObtenerPropietarios() => _propietarios;

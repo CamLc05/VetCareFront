@@ -4,34 +4,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Veterinaria.Views.Componentes"
              x:Class="Veterinaria.Views.PacientesPages"
+             Title="listaPacientes"
+             BackgroundColor="#F5F5F5"
              x:Name="PageRef">
-    <ContentPage.Content>
-        
-        <StackLayout Padding="20">
-            <Label Text="Pacientes" FontSize="24" HorizontalOptions="Center"/>
+    
 
-            <CollectionView ItemsSource="{Binding Pacientes}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <views:PacienteCardView Paciente="{Binding .}">
-                            <views:PacienteCardView.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding BindingContext.SeleccionarCommand, Source={x:Reference PageRef}}" 
-                                                      CommandParameter="{Binding .}" />
-                            </views:PacienteCardView.GestureRecognizers>
-                        </views:PacienteCardView>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+   <Grid>
+            <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0" Margin="0">
+                   
+                <Image Source="logovetnegro.png"
+                       WidthRequest="170"
+                       HeightRequest="80"
+                       Margin="0,10,0,5"
+                />
            
-            
-            
-            <Label Text="Página de pacientes cargada" 
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   FontSize="24"/>
+                    <Label Text="PACIENTES" FontSize="24" FontAttributes="None" HorizontalOptions="Center"   Margin="0"/>
+                
+                <HorizontalStackLayout Padding="10" Spacing="10">
 
-        </StackLayout>
+                    <!-- Contenedor del Entry con borde redondeado -->
+                    <Grid Margin="20,20,0,20"  HorizontalOptions="Center">
+                        <Frame CornerRadius="25"
+                               BorderColor="#F17105"
+                               BackgroundColor="#F5F5F5"
+                               Padding="0"
+                               HeightRequest="50"
+                               WidthRequest="270"
+                              >
+                            
+                            <Grid Padding="0,0">
+                                
+
+                                <!-- Campo de entrada -->
+                                <Entry x:Name="BuscarEntry"
+                                       Placeholder="Buscar..."
+                                       BackgroundColor="#F5F5F5"
+                                       TextColor="Black"
+                                       FontSize="16"
+                                        />
+                                <!-- Ícono de lupa -->
+                                <Image Source="lupa.png"
+                                       HeightRequest="25"
+                                       WidthRequest="25"
+                                       VerticalOptions="Center"
+                                       Margin="200,0,0,0"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    <!-- Botón con ícono para agregar -->
+                        <ImageButton Source="plus.png"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="25"
+                                     WidthRequest="25"
+                                     Margin="10,0,20,0"
+                                   />
+                  
+
+                </HorizontalStackLayout>
+
+                
+              
+
+                <CollectionView ItemsSource="{Binding Pacientes}" Margin="20">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:PacienteCardView Paciente="{Binding .}">
+                                <views:PacienteCardView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.SeleccionarCommand, Source={x:Reference PageRef}}" 
+                                                          CommandParameter="{Binding .}" />
+                                </views:PacienteCardView.GestureRecognizers>
+                            </views:PacienteCardView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
         
-        
-    </ContentPage.Content>
+     </Grid>   
+    
+
+ 
 </ContentPage>

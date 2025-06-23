@@ -6,13 +6,10 @@
              x:Class="Veterinaria.App">
     <Application.Resources>
         <ResourceDictionary>
-            <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
-
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-
+            <Style TargetType="Shell">
+                <Setter Property="TabBarBackgroundColor" Value="Transparent" />
+            </Style>
+            
             <Style TargetType="Entry">
                 <Setter Property="FontFamily" Value="QuicksandLight" />
             </Style>
@@ -24,6 +21,13 @@
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="QuicksandLight" />
             </Style>
+            
+            <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

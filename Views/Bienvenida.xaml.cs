@@ -1,3 +1,9 @@
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Extensions;
+using Veterinaria.Controls;
+using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Core;
+
 namespace Veterinaria.Views;
 
 public partial class Bienvenida : ContentPage
@@ -7,8 +13,16 @@ public partial class Bienvenida : ContentPage
 		InitializeComponent();
 	}
 
-    private async void onClick(object sender, EventArgs e)
+    private async void logout(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Bienvenida());
+        var popup = new CustomPopup();
+
+        await this.ShowPopupAsync(popup);
+
+        if (popup.Result is bool confirmed && confirmed)
+        {
+            await Navigation.PushAsync(new LoginPage());
+
+        }
     }
 }

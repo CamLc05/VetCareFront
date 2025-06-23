@@ -15,7 +15,7 @@
             <Image Source="logovetnegro.png"
                        WidthRequest="250"
                        HeightRequest="150"
-                       Margin="0,30,0,30"
+                       Margin="0,30,0,10"
                        />
 
             <Label Text="Log In"

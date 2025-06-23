@@ -11,6 +11,6 @@ public partial class LoginPage : ContentPage
 
 	private async void onClick(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new Bienvenida());
+        Application.Current.MainPage = new AppShell();
     }
 }

@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Veterinaria.Converters"
              x:Class="Veterinaria.Views.PacienteFormPage"
              Title="Paciente">
     <ContentPage.Content>
@@ -10,19 +11,37 @@
                 <Label Text="{Binding Titulo}" FontSize="22" FontAttributes="Bold"/>
 
                 <Label Text="Nombre"/>
-                <Entry Text="{Binding Paciente.Nombre}"/>
+                <Entry Text="{Binding Paciente.Nombre}"
+                       IsEnabled="{Binding SoloLectura, Converter={StaticResource Inverso}}" />
 
                 <Label Text="Raza"/>
-                <Entry Text="{Binding Paciente.Raza}"/>
+                <Entry Text="{Binding Paciente.Raza}" 
+                       IsEnabled="{Binding SoloLectura, Converter={StaticResource Inverso}}" />
 
                 <Label Text="Especie"/>
                 <Picker ItemsSource="{Binding Especies}"
-                        SelectedItem="{Binding Paciente.Especie}" />
+                        SelectedItem="{Binding Paciente.Especie}" 
+                        IsEnabled="{Binding SoloLectura, Converter={StaticResource Inverso}}" />
 
                 <Label Text="Propietario"/>
                 <Picker ItemsSource="{Binding Propietarios}"
                         ItemDisplayBinding="{Binding Nombre}"
-                        SelectedItem="{Binding Paciente.Propietario}" />
+                        SelectedItem="{Binding Paciente.Propietario}" 
+                        IsEnabled="{Binding SoloLectura, Converter={StaticResource Inverso}}" />
+                
+                <Label Text="Citas" FontAttributes="Bold" />
+                <CollectionView ItemsSource="{Binding Paciente.Citas}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Descripcion}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+                
+                <Button Text="Agregar nuevo propietario"
+                        Command="{Binding AgregarPropietarioCommand}" />
+
 
                 <!-- Botón de guardar -->
                 <Button Text="Guardar" Command="{Binding GuardarCommand}" />

@@ -8,6 +8,8 @@ namespace Veterinaria.ViewModels;
 
 public class PacienteFormViewModel : BindableObject
 {
+    public bool SoloLectura { get; set; } = false;
+
     private Paciente _paciente;
     public Paciente Paciente
     {
@@ -28,6 +30,7 @@ public class PacienteFormViewModel : BindableObject
     public ObservableCollection<Propietario> Propietarios { get; set; }
 
     public ICommand GuardarCommand { get; }
+    public ICommand AgregarPropietarioCommand { get; }
 
     public PacienteFormViewModel()
     {
@@ -36,6 +39,18 @@ public class PacienteFormViewModel : BindableObject
         GuardarCommand = new Command(() =>
         {
             Application.Current.MainPage.DisplayAlert("Guardado", "Paciente actualizado", "OK");
+        });
+        
+        AgregarPropietarioCommand = new Command(async () =>
+        {
+            // Simulación de formulario
+            string nombre = await Application.Current.MainPage.DisplayPromptAsync("Nuevo propietario", "Nombre del propietario:");
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                var nuevo = new Propietario { Nombre = nombre };
+                Propietarios.Add(nuevo);
+                Paciente.Propietario = nuevo;
+            }
         });
     }
 }

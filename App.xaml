@@ -6,7 +6,8 @@
              x:Class="Veterinaria.App">
     <Application.Resources>
         <ResourceDictionary>
-            <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+            
+            <converters:InvertBooleanConverter x:Key="Inverso" />
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
@@ -24,6 +25,11 @@
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="QuicksandLight" />
             </Style>
+            
         </ResourceDictionary>
+        
     </Application.Resources>
+    
+   
+    
 </Application>

@@ -66,7 +66,7 @@
 
                 <!-- Contenido deslizable -->
                 <Frame BackgroundColor="#E4DFDA"
-                       HasShadow="True"
+                      
                        CornerRadius="20"
                        Padding="5"
                        Margin="5"
@@ -104,7 +104,7 @@
                             <Label Text="{Binding Paciente.Propietario.Nombre, StringFormat='Propietario: {0}'}" FontSize="14" />
                         </StackLayout>
 
-                        <!-- Aquí podrías agregar algo más si quieres en la última columna -->
+                        <!-- última columna -->
 
                     </Grid>
                 </Frame>

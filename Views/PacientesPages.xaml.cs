@@ -14,4 +14,9 @@ public partial class PacientesPages : ContentPage
         InitializeComponent();
         BindingContext = new PacienteViewModel();
     }
+    
+    private async void OnNuevoPacienteClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PacienteNuevo());
+    }
 }

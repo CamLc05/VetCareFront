@@ -61,10 +61,9 @@
                                      BackgroundColor="Transparent"
                                      HeightRequest="25"
                                      WidthRequest="25"
+                                     Clicked="OnNuevoPacienteClicked" 
                                      Margin="10,0,20,0"
                                    />
-                  
-
                 </HorizontalStackLayout>
 
                 

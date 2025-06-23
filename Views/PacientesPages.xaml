@@ -22,6 +22,16 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+           
+            
+            
+            <Label Text="Página de pacientes cargada" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="24"/>
+
         </StackLayout>
+        
+        
     </ContentPage.Content>
 </ContentPage>

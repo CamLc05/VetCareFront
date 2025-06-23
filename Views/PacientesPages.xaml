@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Veterinaria.Views.Componentes"
              x:Class="Veterinaria.Views.PacientesPages">
     <ContentPage.Content>
         
@@ -11,14 +12,7 @@
             <CollectionView ItemsSource="{Binding Pacientes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BorderColor="Gray" CornerRadius="15" Padding="10" Margin="5">
-                            <StackLayout>
-                                <Label Text="{Binding Nombre}" FontAttributes="Bold"/>
-                                <Label Text="{Binding Especie}"/>
-                                <Label Text="{Binding Raza}"/>
-                                <Label Text="{Binding Propietario.Nombre}"/>
-                            </StackLayout>
-                        </Frame>
+                        <views:PacienteCardView Paciente="{Binding .}" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

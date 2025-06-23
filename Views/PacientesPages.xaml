@@ -3,7 +3,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Veterinaria.Views.Componentes"
-             x:Class="Veterinaria.Views.PacientesPages">
+             x:Class="Veterinaria.Views.PacientesPages"
+             x:Name="PageRef">
     <ContentPage.Content>
         
         <StackLayout Padding="20">
@@ -12,7 +13,12 @@
             <CollectionView ItemsSource="{Binding Pacientes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <views:PacienteCardView Paciente="{Binding .}" />
+                        <views:PacienteCardView Paciente="{Binding .}">
+                            <views:PacienteCardView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SeleccionarCommand, Source={x:Reference PageRef}}" 
+                                                      CommandParameter="{Binding .}" />
+                            </views:PacienteCardView.GestureRecognizers>
+                        </views:PacienteCardView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

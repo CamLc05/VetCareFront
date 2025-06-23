@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Veterinaria.Views;
+namespace Veterinaria.Views.Componentes;
 
-public partial class PacienteForm : ContentPage
+public partial class PacienteCardView : ContentView
 {
-    public PacienteForm()
+    public PacienteCardView()
     {
         InitializeComponent();
     }

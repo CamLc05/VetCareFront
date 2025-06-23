@@ -10,9 +10,9 @@ public partial class LoginPage : ContentPage
 	private void onClick(object sender, EventArgs e)
 	{
 		var boton = (Button)sender;
-
-		// Cambia el color del botón al hacer clic
 		boton.BackgroundColor = Color.FromArgb("#899878");
+		
+		Application.Current.MainPage = new AppShell();
 
 
     }
